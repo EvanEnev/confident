@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import { useState } from "react";
 
 type Category = "all" | "espresso" | "milk" | "cold" | "signature";
 
@@ -74,43 +74,35 @@ function iconFor(drink: Drink) {
 }
 
 export default function Menu() {
-    // const [drinks, setDrinks] = useState<Drink[]>([])
-    // const [tabs, setTabs] = useState<Tab[]>([])
-    //
-    // useEffect(() => {
-    //     fetch('/api/getMenu').then(async (res) => {
-    //         const data = await res.json()
-    //
-    //         setDrinks(data.drinks)
-    //         setTabs(data.tabs)
-    //     })
-    // })
-
   const [active, setActive] = useState<Category>("all");
 
   const filtered = active === "all" ? drinks : drinks.filter((d) => d.cat === active);
 
   return (
-    <section className="menu-section section" id="menu">
+    <section className="py-24 bg-paper border-t border-b border-line-soft transition-colors duration-300" id="menu">
       <div className="wrap">
-        <div className="section-head">
-          <div className="idx">§ 01 / МЕНЮ</div>
-          <h2>
-            Что <em>нальём</em>
+        <div className="grid grid-cols-[180px_1fr_auto] gap-8 items-baseline mb-14 pb-7 border-b border-line-soft max-[900px]:grid-cols-1 max-[900px]:gap-3">
+          <div className="mono">§ 01 / МЕНЮ</div>
+          <h2 className="font-serif font-normal text-[clamp(40px,5vw,64px)] leading-none tracking-[-0.02em]">
+            Что <em className="italic text-accent">нальём</em>
             <br />
             сегодня
           </h2>
-          <div className="tail">
+          <div className="text-sm text-ink-3 max-w-[280px] text-right max-[900px]:text-left max-[900px]:max-w-none">
             Меняется по сезонам. Есть растительное молоко, авторские сиропы —
             всё своё.
           </div>
         </div>
 
-        <div className="menu-tabs">
+        <div className="flex gap-0.5 mb-8 p-1 bg-bg rounded-full w-fit border border-line-soft">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`menu-tab${active === tab.id ? " active" : ""}`}
+              className={`px-[18px] py-2 rounded-full text-[13px] cursor-pointer transition-all duration-200 border-none font-sans ${
+                active === tab.id
+                  ? "bg-ink text-bg"
+                  : "text-ink-2 bg-transparent hover:text-ink"
+              }`}
               onClick={() => setActive(tab.id)}
             >
               {tab.label}
@@ -118,25 +110,31 @@ export default function Menu() {
           ))}
         </div>
 
-        <div className="menu-grid">
+        <div className="grid grid-cols-12 border-t border-line-soft">
           {filtered.map((drink, i) => (
-            <article key={`${drink.name}-${i}`} className="drink" data-cat={drink.cat}>
-              <div className="drink-top">
+            <article
+              key={`${drink.name}-${i}`}
+              className="group col-span-4 p-7 px-6 border-r border-b border-line-soft relative flex flex-col gap-4 transition-colors duration-[250ms] cursor-pointer hover:bg-bg [&:nth-child(3n)]:border-r-0 max-[900px]:col-span-6 max-[900px]:[&:nth-child(3n)]:border-r max-[900px]:[&:nth-child(2n)]:border-r-0 max-[560px]:col-span-12 max-[560px]:!border-r-0"
+              data-cat={drink.cat}
+            >
+              <div className="flex justify-between items-start gap-3">
                 <div>
-                  <div className="drink-name">{drink.name}</div>
+                  <div className="font-serif text-[28px] leading-[1.05] tracking-[-0.01em]">{drink.name}</div>
                 </div>
-                <div className="drink-illo">{iconFor(drink)}</div>
+                <div className="w-14 h-[72px] shrink-0 grid place-items-center text-ink-2">{iconFor(drink)}</div>
               </div>
-              <div className="drink-desc">{drink.desc}</div>
-              <div className="drink-foot">
-                <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+              <div className="text-[13.5px] text-ink-3 leading-[1.5]">{drink.desc}</div>
+              <div className="flex justify-between items-center pt-3 border-t border-dashed border-line-soft mt-auto">
+                <div className="flex gap-[10px] flex-wrap">
                   {drink.tags.map(([cls, label]) => (
                     <span key={cls} className={`tag ${cls}`}>
                       {label}
                     </span>
                   ))}
                 </div>
-                <div className="drink-price">{drink.price} ₽</div>
+                <div className="font-serif text-[22px] text-ink-2 transition-colors duration-200 whitespace-nowrap group-hover:text-accent">
+                  {drink.price} ₽
+                </div>
               </div>
             </article>
           ))}
