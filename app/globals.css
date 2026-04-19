@@ -93,6 +93,10 @@
   width: 100%;
 }
 
+@utility scrollbar-none {
+  scrollbar-width: none;
+}
+
 /* Pseudo-elements that cannot be expressed in Tailwind */
 .logo-mark::before {
   content: "";

@@ -1,10 +1,9 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Menu from "@/components/Menu";
-import Beans from "@/components/Beans";
-import Location from "@/components/Location";
-import OrderCTA from "@/components/OrderCTA";
-import Footer from "@/components/Footer";
+import Nav from "@/src/components/Nav";
+import Hero from "@/src/components/Hero";
+import Menu from "@/src/components/Menu";
+import Location from "@/src/components/Location";
+import OrderCTA from "@/src/components/OrderCTA";
+import Footer from "@/src/components/Footer";
 
 export default function Home() {
   return (

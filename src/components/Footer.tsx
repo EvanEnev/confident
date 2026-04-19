@@ -1,15 +1,15 @@
+import Image from "next/image";
+import Logo from '@/public/logo'
+
 export default function Footer() {
   return (
     <footer className="border-t border-line-soft pt-16 pb-8 bg-bg transition-colors duration-300">
       <div className="wrap">
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-10 mb-16 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
           <div>
-            <div className="font-serif text-[72px] leading-[0.9] tracking-[-0.02em]">
-              Кон-<br />фи<em className="italic text-accent">дент</em>.
-            </div>
+            <Logo className='text-white' />
             <div className="mt-4 text-ink-3 max-w-[320px] text-sm">
-              Кофейня в спальном районе Москвы. Зёрна, выпечка, тихий угол у
-              окна — с 2019 года.
+              Кофейня в спальном районе Москвы. Кофе, выпечка, тихий угол — с 2023 года.
             </div>
           </div>
 
@@ -17,7 +17,6 @@ export default function Footer() {
             <h5 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-3 mb-4 font-medium">Кофейня</h5>
             <ul className="list-none flex flex-col gap-[10px]">
               <li><a href="#menu"     className="text-sm text-ink-2 transition-colors hover:text-accent">Меню</a></li>
-              <li><a href="#beans"    className="text-sm text-ink-2 transition-colors hover:text-accent">Зёрна</a></li>
               <li><a href="#location" className="text-sm text-ink-2 transition-colors hover:text-accent">Адрес и часы</a></li>
               <li><a href="#order"    className="text-sm text-ink-2 transition-colors hover:text-accent">Заказать</a></li>
             </ul>
