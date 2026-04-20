@@ -1,51 +1,87 @@
-import Image from "next/image";
 import Logo from '@/public/logo'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line-soft pt-16 pb-8 bg-bg transition-colors duration-300">
+    <footer className="border-line-soft bg-bg border-t pt-16 pb-8 transition-colors duration-300">
       <div className="wrap">
-        <div className="grid grid-cols-[2fr_1fr_1fr_1fr] gap-10 mb-16 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
+        <div className="mb-16 grid grid-cols-[2fr_1fr_1fr_1fr] gap-10 max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
           <div>
-            <Logo className='text-white' />
-            <div className="mt-4 text-ink-3 max-w-[320px] text-sm">
-              Кофейня в спальном районе Москвы. Кофе, выпечка, тихий угол — с 2023 года.
+            <Logo className="text-ink" />
+            <div className="text-ink-3 mt-4 max-w-[320px] text-sm">
+              Кофейня в спальном районе Москвы. <br />
+              Кофе, выпечка, тихий угол — с 2023 года.
             </div>
           </div>
 
           <div>
-            <h5 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-3 mb-4 font-medium">Кофейня</h5>
-            <ul className="list-none flex flex-col gap-[10px]">
-              <li><a href="#menu"     className="text-sm text-ink-2 transition-colors hover:text-accent">Меню</a></li>
-              <li><a href="#location" className="text-sm text-ink-2 transition-colors hover:text-accent">Адрес и часы</a></li>
-              <li><a href="#order"    className="text-sm text-ink-2 transition-colors hover:text-accent">Заказать</a></li>
+            <h5 className="text-ink-3 mb-4 font-mono text-[10px] font-medium tracking-widest uppercase">
+              Кофейня
+            </h5>
+            <ul className="flex list-none flex-col gap-2.5">
+              <li>
+                <a
+                  href="#menu"
+                  className="text-ink-2 hover:text-accent text-sm transition-colors">
+                  Меню
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#location"
+                  className="text-ink-2 hover:text-accent text-sm transition-colors">
+                  Адрес и часы
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#order"
+                  className="text-ink-2 hover:text-accent text-sm transition-colors">
+                  Заказать
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h5 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-3 mb-4 font-medium">Контакты</h5>
-            <ul className="list-none flex flex-col gap-[10px]">
-              <li><a href="tel:+74957770000"        className="text-sm text-ink-2 transition-colors hover:text-accent">+7 495 777 00 00</a></li>
-              <li><a href="mailto:hi@konfident.cafe" className="text-sm text-ink-2 transition-colors hover:text-accent">hi@konfident.cafe</a></li>
-              <li className="text-sm text-ink-2">ул. Гарибальди 23к2</li>
+            <h5 className="text-ink-3 mb-4 font-mono text-[10px] font-medium tracking-widest uppercase">
+              Контакты
+            </h5>
+            <ul className="flex list-none flex-col gap-2.5">
+              <li>
+                <a
+                  href="tel:+79689406948"
+                  className="text-ink-2 hover:text-accent text-sm transition-colors">
+                  +7 968 940 69 48
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:support@confident.su"
+                  className="text-ink-2 hover:text-accent text-sm transition-colors">
+                  support@confident.su
+                </a>
+              </li>
+              <li className="text-ink-2 text-sm">
+                Староватутинский проезд, 14
+              </li>
             </ul>
           </div>
 
-          <div>
-            <h5 className="font-mono text-[10px] tracking-[0.1em] uppercase text-ink-3 mb-4 font-medium">Социальные</h5>
-            <ul className="list-none flex flex-col gap-[10px]">
-              <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">Telegram</a></li>
-              <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">VK</a></li>
-              <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">YouTube</a></li>
-            </ul>
-          </div>
+          {/*<div>*/}
+          {/*  <h5 className="font-mono text-[10px] tracking-widest uppercase text-ink-3 mb-4 font-medium">Социальные</h5>*/}
+          {/*  <ul className="list-none flex flex-col gap-2.5">*/}
+          {/*    <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">Telegram</a></li>*/}
+          {/*    <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">VK</a></li>*/}
+          {/*    <li><a href="#" className="text-sm text-ink-2 transition-colors hover:text-accent">YouTube</a></li>*/}
+          {/*  </ul>*/}
+          {/*</div>*/}
         </div>
 
-        <div className="pt-6 border-t border-line-soft flex justify-between text-xs text-ink-3">
-          <span>© 2019—2026 Конфидент</span>
+        <div className="border-line-soft text-ink-3 flex justify-between border-t pt-6 text-xs">
+          <span>© 2023—2026 Конфидент</span>
           <span className="mono">сделано с теплом · Москва</span>
         </div>
       </div>
     </footer>
-  );
+  )
 }

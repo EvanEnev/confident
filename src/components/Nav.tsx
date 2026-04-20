@@ -1,44 +1,58 @@
-"use client";
+'use client'
 
-import { useTheme } from "./ThemeProvider";
+import {useTheme} from './ThemeProvider'
 
 export default function Nav() {
-  const { theme, toggle } = useTheme();
+  const {theme, toggle} = useTheme()
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-[10px] bg-bg border-b border-line-soft transition-colors duration-300">
-      <div className="flex items-center justify-between px-8 py-4 max-w-350 mx-auto">
+    <nav className="bg-bg border-line-soft sticky top-0 z-50 border-b backdrop-blur-[10px] transition-colors duration-300">
+      <div className="mx-auto flex max-w-350 items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2.5">
-          <div className="logo-mark w-7.5 h-7.5 rounded-full bg-ink relative grid place-items-center text-bg font-serif text-[20px] leading-none transition-colors duration-300">
-            к
+          <div className="font-serif text-[22px] tracking-[-0.01em]">
+            Конфидент
           </div>
-          <div className="font-serif text-[22px] tracking-[-0.01em]">Конфидент</div>
         </div>
 
         <div className="flex gap-7 max-[900px]:hidden">
-          <a href="#menu"     className="text-sm text-ink-2 transition-colors duration-200 hover:text-accent">Меню</a>
-          <a href="#location" className="text-sm text-ink-2 transition-colors duration-200 hover:text-accent">Где мы</a>
-          <a href="#order"    className="text-sm text-ink-2 transition-colors duration-200 hover:text-accent">Заказать</a>
+          <a
+            href="#menu"
+            className="text-ink-2 hover:text-accent text-sm transition-colors duration-200">
+            Меню
+          </a>
+          <a
+            href="#location"
+            className="text-ink-2 hover:text-accent text-sm transition-colors duration-200">
+            Где мы
+          </a>
+          <a
+            href="#order"
+            className="text-ink-2 hover:text-accent text-sm transition-colors duration-200">
+            Заказать
+          </a>
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="inline-flex items-center gap-2 py-2.25 px-4 rounded-full border border-line text-[13px] transition-all duration-200 cursor-pointer bg-transparent text-ink hover:bg-ink hover:text-bg hover:border-ink">
-            <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.16_145)] shadow-[0_0_0_4px_color-mix(in_oklch,oklch(0.65_0.16_145)_25%,transparent)]" />
+          <a
+            href="#location"
+            className="border-line text-ink hover:bg-ink hover:text-bg hover:border-ink hidden cursor-pointer items-center gap-2 rounded-full border bg-transparent px-4 py-2.25 text-[13px] transition-all duration-200 sm:inline-flex">
+            <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.65_0.16_145)] shadow-[0_0_0_4px_color-mix(in_oklch,oklch(0.65_0.16_145)_25%,transparent)]" />
             Открыто до 21:00
-          </span>
-          <a href="#order" className="inline-flex items-center gap-2 py-2.25 px-4 rounded-full border text-[13px] transition-all duration-200 bg-ink text-bg border-ink hover:bg-accent hover:border-accent hover:text-paper">
+          </a>
+          <a
+            href="#order"
+            className="bg-ink text-bg border-ink hover:bg-accent hover:border-accent hover:text-paper hidden items-center gap-2 rounded-full border px-4 py-2.25 text-[13px] transition-all duration-200 sm:inline-flex">
             Заказать онлайн →
           </a>
           <button
-            className="grid place-items-center w-9 h-9 rounded-full border border-line bg-transparent text-ink-2 cursor-pointer transition-all duration-200 text-base hover:bg-ink hover:text-bg hover:border-ink"
+            className="border-line text-ink-2 hover:bg-ink hover:text-bg hover:border-ink grid h-9 w-9 cursor-pointer place-items-center rounded-full border bg-transparent text-base transition-all duration-200"
             onClick={toggle}
             aria-label="Toggle theme"
-            title={theme === "light" ? "Тёмная тема" : "Светлая тема"}
-          >
-            {theme === "light" ? "☽" : "☀"}
+            title={theme === 'light' ? 'Тёмная тема' : 'Светлая тема'}>
+            {theme === 'light' ? '☽' : '☀'}
           </button>
         </div>
       </div>
     </nav>
-  );
+  )
 }
