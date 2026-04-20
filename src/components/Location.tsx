@@ -37,7 +37,7 @@ export default function Location() {
             height="400"
           />
           <div>
-            <h3 className="font-serif text-[52px] leading-none font-normal tracking-[-0.02em]">
+            <h3 className="font-serif text-[52px] leading-none font-normal tracking-[-0.02em] wrap-anywhere">
               Староватутинский проезд,{' '}
               <em className="text-accent italic">14</em>
             </h3>

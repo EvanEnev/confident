@@ -66,11 +66,6 @@ export default async function Home() {
   )
 
   const disabledIds = DISABLED_CATS.map(c => {
-    console.debug(
-      quickCategories.find(
-        (d: {name: string}) => d.name.toLowerCase() === c.toLowerCase(),
-      ),
-    )
     return quickCategories.find(
       (d: {name: string}) => d.name.toLowerCase() === c.toLowerCase(),
     )?.id
